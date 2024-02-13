@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ['Jour', 'Température'],
+        ['Jour 1', 12],
+        ['Jour 2', 14],
+        ['Jour 3', 15],
+        ['Jour 4', 16],
+        ['Jour 5', 17],
+        ['Jour 6', 18],
+        ['Jour 7', 19],
+        ['Jour 8', 20],
+        ['Jour 9', 21],
+        ['Jour 10', 20],
+        ['Jour 11', 19],
+        ['Jour 12', 18],
+        ['Jour 13', 17],
+        ['Jour 14', 16],
+        ['Jour 15', 15],
+        ['Jour 16', 14]
+      ]);
+
+      var options = {
+        title: 'Températures de Paris pour les 16 prochains jours',
+        legend: { position: 'none' },
+        bars: 'vertical'
+      };
+
+      var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+
+      chart.draw(data, options);
+    }
+  </script>
+</head>
+<body>
+  <div id="chart_div" style="width: 900px; height: 500px;"></div>
+</body>
+</html>
