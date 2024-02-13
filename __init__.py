@@ -7,7 +7,9 @@ import sqlite3
                                                                                                                                        
 app = Flask(__name__)                                                                                                                  
                                                                                                                                        
-@app.route('/')
+@app.route("/contact/")
+def MaPremiereAPI():
+    return "<h2>Ma page de contact</h2>"
 def hello_world():
     return render_template('hello.html') #Comm2
   
