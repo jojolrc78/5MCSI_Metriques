@@ -44,7 +44,7 @@ def commits():
     return jsonify({'minutes': minutes, 'commit_counts': commit_counts})
   
 @app.route("/contact/")
-def Utilisateur():
+def utilisateur():
     return render_template("contact.html")
   
 @app.route("/histogramme/")
