@@ -7,6 +7,10 @@ import sqlite3
                                                                                                                                        
 app = Flask(__name__)                                                                                                                  
 
+@app.route("/contact/")
+def Utilisateur():
+    return render_template("contact.html")
+  
 @app.route("/histogramme/")
 def monhistogramme():
     return render_template("histogramme.html")
@@ -27,9 +31,9 @@ def meteo():
         results.append({'Jour': dt_value, 'temp': temp_day_value})
     return jsonify(results=results)
   
-@app.route("/contact/")
-def MaPremiereAPI():
-    return "<h2>Ma page de contact</h2>"
+#@app.route("/contact/")
+#def MaPremiereAPI():
+    #return "<h2>Ma page de contact</h2>"
 
 @app.route('/')
 def hello_world():
