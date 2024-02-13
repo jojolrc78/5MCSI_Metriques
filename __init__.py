@@ -18,9 +18,11 @@ def meteo():
         temp_day_value = list_element.get('main', {}).get('temp') - 273.15 # Conversion de Kelvin en °c 
         results.append({'Jour': dt_value, 'temp': temp_day_value})
     return jsonify(results=results)
+  
 @app.route("/contact/")
 def MaPremiereAPI():
     return "<h2>Ma page de contact</h2>"
+  
 @app.route('/')
 def hello_world():
     return render_template('hello.html') #Comm2
