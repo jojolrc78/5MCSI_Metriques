@@ -1,12 +1,10 @@
-from flask import Flask, render_template_string, render_template, jsonify
-from flask import render_template
-from flask import json
+from flask import Flask, render_template, jsonify
 from datetime import datetime
 from urllib.request import urlopen
-import sqlite3
+import json
 import requests
-                                                                                                                                       
-app = Flask(__name__)                                                                                                                  
+
+app = Flask(__name__)
 
 # Route pour extraire les minutes d'une date
 @app.route('/extract-minutes/<date_string>')
@@ -39,19 +37,8 @@ def commits():
     commit_counts = list(commits_per_minute.values())
     
     return jsonify({'minutes': minutes, 'commit_counts': commit_counts})
-  
-@app.route("/contact/")
-def Utilisateur():
-    return render_template("contact.html")
-  
-@app.route("/histogramme/")
-def monhistogramme():
-    return render_template("histogramme.html")
-  
-@app.route("/rapport/")
-def mongraphique():
-    return render_template("graphique.html")
-  
+
+# Route pour récupérer les données météorologiques
 @app.route('/tawarano/')
 def meteo():
     response = urlopen('https://samples.openweathermap.org/data/2.5/forecast?lat=0&lon=0&appid=xxx')
@@ -60,17 +47,26 @@ def meteo():
     results = []
     for list_element in json_content.get('list', []):
         dt_value = list_element.get('dt')
-        temp_day_value = list_element.get('main', {}).get('temp') - 273.15 # Conversion de Kelvin en °c 
+        temp_day_value = list_element.get('main', {}).get('temp') - 273.15 # Conversion de Kelvin en °C
         results.append({'Jour': dt_value, 'temp': temp_day_value})
     return jsonify(results=results)
-  
-#@app.route("/contact/")
-#def MaPremiereAPI():
-    #return "<h2>Ma page de contact</h2>"
+
+# Routes pour les autres pages
+@app.route("/contact/")
+def Utilisateur():
+    return render_template("contact.html")
+
+@app.route("/histogramme/")
+def monhistogramme():
+    return render_template("histogramme.html")
+
+@app.route("/rapport/")
+def mongraphique():
+    return render_template("graphique.html")
 
 @app.route('/')
 def hello_world():
-    return render_template('hello.html') #Comm2
-  
+    return render_template('hello.html')
+
 if __name__ == "__main__":
-  app.run(debug=True)
+    app.run(debug=True)
