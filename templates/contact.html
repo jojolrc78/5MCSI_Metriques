@@ -4,11 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Roboto', sans-serif; /* Utilisation d'une police de caractères moderne */
-            background-image: url("https://s.france24.com/media/display/886f20ec-0fc4-11e9-884f-005056bff430/w:980/p:16x9/fc53748182b6354bc6e12390e35a15bc.jpg");
+            background-image: url("URL_DE_L_IMAGE");
             background-size: cover;
             background-repeat: no-repeat;
             height: 100vh;
@@ -16,44 +15,51 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            font-family: 'Roboto', sans-serif;
+            color: #000000; /* Couleur noire pour tout le texte */
         }
 
         .container {
             background-color: rgba(255, 255, 255, 0.8);
             padding: 20px;
             border-radius: 10px;
-            text-align: center; /* Centrer le texte horizontalement */
-            color: #fff; /* Couleur du texte en blanc */
+            text-align: center;
+            max-width: 400px;
         }
 
         h1 {
-            font-size: 2.5rem; /* Taille de la police pour le titre */
-            text-transform: uppercase; /* Texte en majuscules */
-            letter-spacing: 2px; /* Espacement entre les lettres */
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
         }
 
         label, input, textarea {
-            font-size: 1.2rem; /* Taille de la police pour les étiquettes et les champs de saisie */
-            margin-bottom: 10px; /* Espacement entre les éléments */
-            display: block; /* Afficher chaque élément sur une ligne différente */
-            width: 100%; /* Définir la largeur à 100% */
-            border: none; /* Supprimer les bordures */
-            border-radius: 5px; /* Ajouter des coins arrondis */
-            padding: 10px; /* Ajouter un remplissage */
-            box-sizing: border-box; /* Inclure la bordure et le remplissage dans la largeur et la hauteur */
-            background-color: rgba(255, 255, 255, 0.5); /* Ajouter une couleur de fond semi-transparente */
-            color: #000; /* Couleur du texte en noir */
+            display: block;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #000000;
         }
 
         input[type="submit"] {
-            background-color: #ff6600; /* Couleur de fond orange pour le bouton d'envoi */
-            color: #fff; /* Couleur du texte en blanc */
-            cursor: pointer; /* Changement de curseur au survol */
-            transition: background-color 0.3s ease; /* Transition fluide pour le changement de couleur de fond */
+            background-color: #000000;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2rem;
         }
 
         input[type="submit"]:hover {
-            background-color: #ff8000; /* Changement de couleur de fond au survol */
+            background-color: #333333;
         }
     </style>
 </head>
